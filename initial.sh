@@ -18,7 +18,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 sudo usermod -aG docker vmware
-sudo newgrp docker
+newgrp docker
 
 #Minikube
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
