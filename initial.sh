@@ -1,11 +1,12 @@
-#SSH
+# SSH
 if ! command -v openssl &> /dev/null
 then
     sudo apt update
     sudo apt install openssl -y
 fi
 
-#Docker
+# Docker
+# https://docs.docker.com/engine/install/ubuntu/
 if ! command -v docker &> /dev/null
 then
     sudo apt-get update
@@ -26,7 +27,8 @@ then
     newgrp docker
 fi
 
-#Minikube
+# Minikube
+# https://minikube.sigs.k8s.io/docs/start/
 if ! command -v minikube &> /dev/null
 then
     curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
