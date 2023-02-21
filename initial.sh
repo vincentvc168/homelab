@@ -1,8 +1,12 @@
 # SSH
-if ! command -v openssl &> /dev/null
+# https://www.cyberciti.biz/faq/ubuntu-linux-install-openssh-server/
+if ! command -v openssh &> /dev/null
 then
     sudo apt update
-    sudo apt install openssl -y
+    sudo apt-get install openssh-server -y
+    sudo systemctl enable ssh
+    sudo systemctl enable ssh --now
+    sudo systemctl start ssh
 fi
 
 # Docker
