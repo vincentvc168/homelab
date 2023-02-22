@@ -1,6 +1,6 @@
 # SSH
 # https://www.cyberciti.biz/faq/ubuntu-linux-install-openssh-server/
-if service --status-all | grep -Fq 'ssh
+if service --status-all | grep -Fq 'ssh'
 then
     sudo apt update
     sudo apt-get install openssh-server -y
