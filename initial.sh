@@ -45,3 +45,10 @@ if ! command -v helm &> /dev/null
 then
     sudo snap install helm --classic
 fi
+
+# Kubectl
+# 
+if ! command -v kubectl &> /dev/null
+then
+    sudo snap install kubectl --classic
+fi
