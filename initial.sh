@@ -31,6 +31,14 @@ then
     newgrp docker
 fi
 
+# Virtualbox
+# https://phoenixnap.com/kb/install-virtualbox-on-ubuntu
+if ! command -v virtualbox &> /dev/null
+then
+    sudo apt-get install virtualbox
+fi
+
+
 # Minikube
 # https://minikube.sigs.k8s.io/docs/start/
 if ! command -v minikube &> /dev/null
