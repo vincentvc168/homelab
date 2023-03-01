@@ -35,7 +35,7 @@ fi
 # https://phoenixnap.com/kb/install-virtualbox-on-ubuntu
 if ! command -v virtualbox &> /dev/null
 then
-    sudo apt-get install virtualbox
+    sudo apt-get install virtualbox -y
 fi
 
 
@@ -51,12 +51,12 @@ fi
 # 
 if ! command -v helm &> /dev/null
 then
-    sudo snap install helm --classic
+    sudo snap install helm --classic -y
 fi
 
 # Kubectl
 # 
 if ! command -v kubectl &> /dev/null
 then
-    sudo snap install kubectl --classic
+    sudo snap install kubectl --classic -y
 fi
