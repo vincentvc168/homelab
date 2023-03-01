@@ -13,7 +13,7 @@ fi
 # https://docs.docker.com/engine/install/ubuntu/
 if ! command -v docker &> /dev/null
 then
-    sudo apt-get update
+    sudo apt-get update -y
     sudo apt-get install \
         ca-certificates \
         curl \
@@ -60,3 +60,5 @@ if ! command -v kubectl &> /dev/null
 then
     sudo snap install kubectl --classic -y
 fi
+
+# minikube start --driver=virtualbox --memory 22288 --cpus 8 --disk-size="70000mb" --kubernetes-version=v1.25.00
