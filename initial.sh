@@ -61,4 +61,4 @@ then
     sudo snap install kubectl --classic -y
 fi
 
-# minikube start --driver=virtualbox --memory 22288 --cpus 8 --disk-size="70000mb" --kubernetes-version=v1.25.00
+# minikube start --driver=virtualbox --memory 22288 --cpus 8 --disk-size="70000mb" --kubernetes-version=v1.25.0
