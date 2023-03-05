@@ -1,4 +1,4 @@
-# Target Ubuntu 22.x
+# Target Ubuntu 22.x Desktop Edition
 # SSH
 # https://www.cyberciti.biz/faq/ubuntu-linux-install-openssh-server/
 if ! service --status-all | grep -Fq 'ssh'
