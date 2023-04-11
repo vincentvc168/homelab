@@ -41,3 +41,7 @@ tanzu plugin install --local cli all
 # Confirm successful installation
 tanzu plugin list
 
+#Command completion
+echo 'source <(tanzu completion bash)' >> $HOME/.bashrc
+source $HOME/.bashrc
+
