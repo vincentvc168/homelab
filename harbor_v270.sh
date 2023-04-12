@@ -3,6 +3,17 @@
 #sudo snap install curl
 #curl -LO {this file URL}
 
+# SSH
+# https://www.cyberciti.biz/faq/ubuntu-linux-install-openssh-server/
+if ! service --status-all | grep -Fq 'ssh'
+then
+    sudo apt update
+    sudo apt-get install openssh-server -y
+    sudo systemctl enable ssh
+    sudo systemctl enable ssh --now
+    sudo systemctl start ssh
+fi
+
 # Docker
 # https://docs.docker.com/engine/install/ubuntu/
 if ! command -v docker &> /dev/null
@@ -25,3 +36,13 @@ then
     sudo usermod -aG docker $(whoami)
     newgrp docker
 fi
+
+#Download and extract Harbor
+curl -LO https://github.com/goharbor/harbor/releases/download/v2.7.1/harbor-offline-installer-v2.7.1.tgz
+tar zxvf harbor-offline-installer-*.tgz
+
+#Copy server certificate and private key into $HOME/data/cert/
+#Modify harbor.yml poinint to above location and update the domain name
+#sudo ./install.sh
+
+
