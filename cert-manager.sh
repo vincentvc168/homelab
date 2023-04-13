@@ -1,8 +1,8 @@
 # https://cert-manager.io/docs/tutorials/acme/nginx-ingress/
-
-minikube start
-minikube addons enable metallb
-minikube ip
+# https://kubebyexample.com/learning-paths/metallb/install/
+# minikube addons enable metallb
+# minikube profile list
+# minikube ip
 
 # Using above minikube ip range as reference such as 192.168.49.10 to 192.168.49.20
 echo "Using above minikube ip range as reference such as 192.168.49.10 to 192.168.49.20"
