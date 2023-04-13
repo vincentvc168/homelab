@@ -75,6 +75,7 @@ then
     #sudo usermod -aG docker vmware
     sudo usermod -aG docker $(whoami)
     newgrp docker
+    exit
 fi
 
 # minikube start --driver=virtualbox --memory 22288 --cpus 8 --disk-size="70000mb" --kubernetes-version=v1.25.0
