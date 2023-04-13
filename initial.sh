@@ -22,7 +22,7 @@ fi
 # https://minikube.sigs.k8s.io/docs/start/
 if ! command -v minikube &> /dev/null
 then
-    curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    sudo curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
     sudo install minikube-linux-amd64 /usr/local/bin/minikube
 fi
 
