@@ -30,14 +30,14 @@ fi
 # 
 if ! command -v helm &> /dev/null
 then
-    sudo snap install helm --classic -y
+    sudo snap install helm --classic
 fi
 
 # Kubectl
 # 
 if ! command -v kubectl &> /dev/null
 then
-    sudo snap install kubectl --classic -y
+    sudo snap install kubectl --classic
 fi
 
 # Visual Studio Code
