@@ -1,0 +1,25 @@
+ubuntu@master:/etc/systemd/system$ cat tunnel-port-443.service
+[Service]
+ExecStart=/usr/local/bin/tunnel-ports 443 31443
+RestartSec=5
+Restart=always
+
+[Unit]
+Description=Set up tunnelling from port 443 to 31443
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+ubuntu@master:/etc/systemd/system$ cat tunnel-port-80.service
+[Service]
+ExecStart=/usr/local/bin/tunnel-ports 80 31080
+RestartSec=5
+Restart=always
+
+[Unit]
+Description=Set up tunnelling from port 80 to 31080
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+ubuntu@master:/etc/systemd/system$ 
