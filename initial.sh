@@ -10,6 +10,11 @@ then
     sudo systemctl start ssh
 fi
 
+if ! command -v kontena-lens &> /dev/null
+then
+    sudo snap install kontena-lens --classic
+fi
+
 # Virtualbox
 # https://phoenixnap.com/kb/install-virtualbox-on-ubuntu
 if ! command -v virtualbox &> /dev/null
