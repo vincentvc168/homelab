@@ -53,7 +53,7 @@ fi
 
 # Deploying the Cluster Essentials
 cd $HOME
-if ! command -v tanzu &> /dev/null
+if ! command -v kapp &> /dev/null
 then
   pivnet download-product-files --product-slug='tanzu-cluster-essentials' --release-version='1.4.1' --product-file-id=1423994
 
