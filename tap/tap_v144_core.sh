@@ -53,18 +53,24 @@ fi
 
 # Deploying the Cluster Essentials
 cd $HOME
-pivnet download-product-files --product-slug='tanzu-cluster-essentials' --release-version='1.4.1' --product-file-id=1423994
+if ! command -v tanzu &> /dev/null
+then
+  pivnet download-product-files --product-slug='tanzu-cluster-essentials' --release-version='1.4.1' --product-file-id=1423994
 
-# if your Harbor is using self-signed certificate, please prepare the harbor.crt by https://github.com/vincentvc168/homelab/blob/main/getcert_importcert.sh
+  # if your Harbor is using self-signed certificate, please prepare the harbor.crt by https://github.com/vincentvc168/homelab/blob/main/getcert_importcert.sh
 
-# Unpack the TAR file into the tanzu-cluster-essentials
-# https://docs.vmware.com/en/Cluster-Essentials-for-VMware-Tanzu/1.4/cluster-essentials/deploy.html
-mkdir $HOME/tanzu-cluster-essentials
-tar -xvf tanzu-cluster-essentials-linux-amd64-*.tgz -C $HOME/tanzu-cluster-essentials
-cd $HOME/tanzu-cluster-essentials
-./install.sh --yes
+  # Unpack the TAR file into the tanzu-cluster-essentials
+  # https://docs.vmware.com/en/Cluster-Essentials-for-VMware-Tanzu/1.4/cluster-essentials/deploy.html
+  mkdir $HOME/tanzu-cluster-essentials
+  tar -xvf tanzu-cluster-essentials-linux-amd64-*.tgz -C $HOME/tanzu-cluster-essentials
+  cd $HOME/tanzu-cluster-essentials
+  ./install.sh --yes
 
-# Install the CLIs
-sudo cp $HOME/tanzu-cluster-essentials/kapp /usr/local/bin/kapp
-sudo cp $HOME/tanzu-cluster-essentials/imgpkg /usr/local/bin/imgpkg
+  # Install the CLIs
+  sudo cp $HOME/tanzu-cluster-essentials/kapp /usr/local/bin/kapp
+  sudo cp $HOME/tanzu-cluster-essentials/imgpkg /usr/local/bin/imgpkg
 
+  # Command completion
+  echo 'source <(tanzu completion bash)' >> $HOME/.bashrc
+  source $HOME/.bashrc
+fi
