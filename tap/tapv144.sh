@@ -1,6 +1,6 @@
 # Assuming Minikube is single node
 export MASTER_IP=$(minikube ip)
-export HARBOR_IP=192.168.0.61
+export HARBOR_IP=harbor.hlab.uk
 export TANZUNETWORK_USERNAME
 read -p "Enter your Docker Username: " TANZUNETWORK_USERNAME
 export TANZUNETWORK_PASSWORD
@@ -24,3 +24,5 @@ export INGRESS_DOMAIN="$MASTER_IP.nip.io"
 docker login $INSTALL_REGISTRY_HOSTNAME -u "$INSTALL_REGISTRY_USERNAME" -p "INSTALL_REGISTRY_PASSWORD"
 docker login registry.tanzu.vmware.com -u "$TANZUNETWORK_USERNAME" -p "$TANZUNETWORK_PASSWORD"
 
+imgpkg copy -b registry.tanzu.vmware.com/tanzu-application-platform/tap-packages:${TAP_VERSION} \
+    --to-repo ${INSTALL_REGISTRY_HOSTNAME}/${INSTALL_REPO}/tap-packages
