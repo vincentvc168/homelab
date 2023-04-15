@@ -13,6 +13,8 @@ sudo install pivnet-linux-amd64-3.0.1 /usr/local/bin/pivnet
 pivnet login --api-token "$PIVNET_TOKEN"
 
 # Accept EULAs in Tanzu Application Platform and Cluster Essential
-# 
+
+# Install Tanzu CLI and plugins
+pivnet download-product-files --product-slug='tanzu-application-platform' --release-version='1.4.4' --product-file-id=1457672
 
 
