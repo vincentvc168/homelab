@@ -1,6 +1,6 @@
 # Assuming Minikube is single node
-$MASTER_IP=$(minikube ip)
-$HARBOR_IP=192.168.0.61
+export $MASTER_IP=$(minikube ip)
+export $HARBOR_IP=192.168.0.61
 export TANZUNETWORK_USERNAME
 read -p "Enter your Docker Username: " TANZUNETWORK_USERNAME
 export TANZUNETWORK_PASSWORD
