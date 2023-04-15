@@ -6,11 +6,11 @@
 cd $HOME
 #export PIVNET_TOKEN={Your Tanzu Network UAA API Token}
 export PIVNET_TOKEN
-read -sp "Enter your token: " PIVNET_TOKEN
+read -p "Enter your token: " PIVNET_TOKEN
 export INSTALL_REGISTRY_USERNAME
-read -sp "Enter your Tanzu Network Username: " INSTALL_REGISTRY_USERNAME
+read -p "Enter your Tanzu Network Username: " INSTALL_REGISTRY_USERNAME
 export INSTALL_REGISTRY_PASSWORD
-read -sp "Enter your Tanzu Network Password: " INSTALL_REGISTRY_PASSWORD
+read -p "Enter your Tanzu Network Password: " INSTALL_REGISTRY_PASSWORD
 export INSTALL_BUNDLE=registry.tanzu.vmware.com/tanzu-cluster-essentials/cluster-essentials-bundle@sha256:2354688e46d4bb4060f74fca069513c9b42ffa17a0a6d5b0dbb81ed52242ea44
 export INSTALL_REGISTRY_HOSTNAME=registry.tanzu.vmware.com
 
