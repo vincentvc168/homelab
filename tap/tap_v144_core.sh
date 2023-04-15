@@ -1,5 +1,6 @@
 # Preparing credentials and setting environmental variables
 # vincentc2@vmware.com
+cd $HOME
 export PIVNET_TOKEN
 read -sp "Enter your token: " PIVNET_TOKEN
 
