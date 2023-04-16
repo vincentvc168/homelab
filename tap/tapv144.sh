@@ -63,7 +63,7 @@ shared:
   ## echo $CA_CERT
   ingress_domain: "${INGRESS_DOMAIN}"
   image_registry:
-    project_path: ${HARBOR_IP}/library"
+    project_path: "${HARBOR_IP}/${INSTALL_REPO}"
     username: "admin"
     password: "Harbor12345"
   
