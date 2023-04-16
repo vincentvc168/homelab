@@ -87,4 +87,4 @@ fi
 
 # TAP Hardware Requirement https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.4/tap/prerequisites.html
 # Full Profile - 16GB Ram, 8 vCPU, 100GB Disk
-# minikube start --driver=virtualbox --memory 28672 --cpus 16 --disk-size="150000mb" --kubernetes-version=v1.25.0
+# minikube start --driver=virtualbox --memory 28672 --cpus 16 --disk-size="150000mb" --kubernetes-version=v1.25.8
