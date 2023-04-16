@@ -1,4 +1,5 @@
 # Assuming Minikube is single node
+# Configuring harbor.hlab.uk in /etc/hosts
 export MASTER_IP=$(minikube ip)
 export HARBOR_IP=harbor.hlab.uk
 export TANZUNETWORK_USERNAME
