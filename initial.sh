@@ -1,5 +1,5 @@
 # Target Ubuntu 22.x Desktop Edition
-sudo apt install curl
+sudo apt install curl -y
 
 # SSH
 # https://www.cyberciti.biz/faq/ubuntu-linux-install-openssh-server/
