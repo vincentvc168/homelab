@@ -83,4 +83,6 @@ then
     exit
 fi
 
-# minikube start --driver=virtualbox --memory 22288 --cpus 8 --disk-size="70000mb" --kubernetes-version=v1.25.0
+# TAP Hardware Requirement https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.4/tap/prerequisites.html
+# Full Profile - 16GB Ram, 8 vCPU, 100GB Disk
+# minikube start --driver=virtualbox --memory 28672 --cpus 16 --disk-size="150000mb" --kubernetes-version=v1.25.0
