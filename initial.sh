@@ -1,4 +1,6 @@
 # Target Ubuntu 22.x Desktop Edition
+sudo apt install curl
+
 # SSH
 # https://www.cyberciti.biz/faq/ubuntu-linux-install-openssh-server/
 if ! service --status-all | grep -Fq 'ssh'
@@ -27,7 +29,7 @@ fi
 # https://minikube.sigs.k8s.io/docs/start/
 if ! command -v minikube &> /dev/null
 then
-    sudo wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    sudo curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
     sudo install minikube-linux-amd64 /usr/local/bin/minikube
 fi
 
