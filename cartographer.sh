@@ -16,3 +16,6 @@ kapp deploy --yes -a cert-manager \
 # https://github.com/vmware-tanzu/cartographer#installation
 kubectl create namespace cartographer-system
 kubectl apply -f https://github.com/vmware-tanzu/cartographer/releases/latest/download/cartographer.yaml
+
+# Tutorial
+# https://cartographer.sh/docs/v0.7.0/tutorials/first-supply-chain/
