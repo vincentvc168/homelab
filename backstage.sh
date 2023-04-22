@@ -55,3 +55,12 @@ then
     exit
 fi
 
+# Above is adequate of creating Backstage Standalone
+# https://backstage.spotify.com/learn/standing-up-backstage/standing-up-backstage/2-install-app/
+# npx @backstage/create-app
+# cd xxx && yarn dev
+# localhost:3000
+
+# For Production, please follow https://backstage.spotify.com/learn/standing-up-backstage/configuring-backstage/5-config-2/
+
+
