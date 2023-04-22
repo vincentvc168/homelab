@@ -12,7 +12,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 source ~/.bashrc
 
 # Installing NodeJS
-nvm install node
+nvm install 18.0.0
 
 # Installing YARN
 npm install --global yarn
