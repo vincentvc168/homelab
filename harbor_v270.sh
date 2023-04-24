@@ -44,5 +44,8 @@ tar zxvf harbor-offline-installer-*.tgz
 #Copy server certificate and private key into $HOME/data/cert/
 #Modify harbor.yml poinint to above location and update the domain name
 #sudo ./install.sh
+#Restart
+#sudo docker compose down -v
+#sudo docker compose up -d
 
 
