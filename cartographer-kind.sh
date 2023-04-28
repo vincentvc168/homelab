@@ -55,8 +55,8 @@ sudo bash install.sh
 # Cartographer with Cluster
 # https://cartographer.sh/docs/development/tutorials/first-supply-chain/
 cd $HOME
-wget https://raw.githubusercontent.com/vmware-tanzu/cartographer/main/hack/setup.sh
-chmod +x setup.sh
-./setup.sh cluster cartographer-latest
-# setup.sh teardown
+git clone https://github.com/vmware-tanzu/cartographer.git
+cd cartographer
+./hacker/setup.sh cluster cartographer-latest
+# ./hacker/setup.sh teardown
 
