@@ -72,3 +72,9 @@ cd cartographer
 )
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 kubectl krew install tree
+
+# https://stackoverflow.com/questions/3655306/ubuntu-usr-bin-env-python-no-such-file-or-directory
+apt-get install python3
+# whereis python3
+sudo ln -s /usr/bin/python3 /usr/bin/python
+# EDIT: hi everyone, I noticed that @mchid posted a better solution below my answer: sudo apt install python-is-python3
