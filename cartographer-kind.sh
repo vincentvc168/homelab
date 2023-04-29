@@ -73,6 +73,7 @@ cd cartographer
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 kubectl krew install tree
 
+# ./hack/ip.py
 # https://stackoverflow.com/questions/3655306/ubuntu-usr-bin-env-python-no-such-file-or-directory
 apt-get install python3
 # whereis python3
