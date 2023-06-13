@@ -33,7 +33,6 @@ then
     #sudo usermod -aG docker vmware
     sudo usermod -aG docker $(whoami)
     newgrp docker
-    exit
 fi
 
 # Kind
@@ -71,11 +70,11 @@ cd cartographer
   ./"${KREW}" install krew
 )
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-kubectl krew install tree
+sudo kubectl krew install tree
 
 # ./hack/ip.py
 # https://stackoverflow.com/questions/3655306/ubuntu-usr-bin-env-python-no-such-file-or-directory
-apt-get install python3
+sudo apt-get install python3
 # whereis python3
 sudo ln -s /usr/bin/python3 /usr/bin/python
 # EDIT: hi everyone, I noticed that @mchid posted a better solution below my answer: sudo apt install python-is-python3
