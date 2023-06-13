@@ -1,3 +1,7 @@
+#VMware Workstation Snapshot Restoration Networking Bug
+# nmcli networking off
+# nmcli networking on
+
 # Target Ubuntu 22.x Desktop Edition
 sudo apt install curl -y
 
