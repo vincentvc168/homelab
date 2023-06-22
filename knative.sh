@@ -85,5 +85,11 @@ mv kn-quickstart-linux-amd64 kn-quickstart
 chmod +x kn-quickstart
 sudo mv kn-quickstart /usr/local/bin
 
-#kn quickstart kind
+kn quickstart kind
+
+#KNative Function
+wget https://github.com/knative/func/releases/download/knative-v1.10.0/func_linux_amd64
+mv func_linux_amd64 func
+chmod +x func
+sudo mv func /usr/local/bin/func
 
