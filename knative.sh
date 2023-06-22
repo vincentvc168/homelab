@@ -78,4 +78,9 @@ sudo ln -s /usr/bin/python3 /usr/bin/python
 wget https://github.com/knative/client/releases/download/knative-v1.10.0/kn-linux-amd64
 mv kn-linux-amd64 kn
 sudo mv kn /usr/local/bin
-   
+
+#Install KNative
+wget https://github.com/knative-sandbox/kn-plugin-quickstart/releases/download/knative-v1.10.0/kn-quickstart-linux-amd64
+mv kn-quickstart-linux-amd64 kn-quickstart
+chmod +x kn-quickstart
+sudo mv kn-quickstart /usr/local/bin
