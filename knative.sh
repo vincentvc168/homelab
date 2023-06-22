@@ -35,51 +35,7 @@ then
 
     #sudo usermod -aG docker vmware
     sudo usermod -aG docker $(whoami)
-    newgrp docker << END
-        # Kind
-        # https://kind.sigs.k8s.io/docs/user/quick-start/#installation
-        if ! command -v kind &> /dev/null
-        then
-        curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.18.0/kind-linux-amd64
-        chmod +x ./kind
-        sudo mv ./kind /usr/local/bin/kind
-        fi
-
-        # Carvel Tools
-        # https://carvel.dev/kapp/docs/v0.54.0/install/
-        wget -O- https://carvel.dev/install.sh > install.sh
-
-        # Inspect install.sh before running...
-        sudo bash install.sh
-
-        # Cartographer with Cluster
-        # https://cartographer.sh/docs/development/tutorials/first-supply-chain/
-        cd $HOME
-        git clone https://github.com/vmware-tanzu/cartographer.git
-        cd cartographer
-        #./hacker/setup.sh cluster cartographer-latest
-        # ./hacker/setup.sh teardown
-
-        # Krew & Tree
-        (
-          set -x; cd "$(mktemp -d)" &&
-          OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
-          ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
-          KREW="krew-${OS}_${ARCH}" &&
-          curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
-          tar zxvf "${KREW}.tar.gz" &&
-          ./"${KREW}" install krew
-        )
-        export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-        sudo kubectl krew install tree
-
-        # ./hack/ip.py
-        # https://stackoverflow.com/questions/3655306/ubuntu-usr-bin-env-python-no-such-file-or-directory
-        sudo apt-get install python3
-        # whereis python3
-        sudo ln -s /usr/bin/python3 /usr/bin/python
-        # EDIT: hi everyone, I noticed that @mchid posted a better solution below my answer: sudo apt install python-is-python3
-        END
+    newgrp docker 
 fi
 
 # Kind
@@ -97,3 +53,24 @@ wget -O- https://carvel.dev/install.sh > install.sh
 
 # Inspect install.sh before running...
 sudo bash install.sh
+
+# Krew & Tree
+(
+  set -x; cd "$(mktemp -d)" &&
+  OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
+  ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
+  KREW="krew-${OS}_${ARCH}" &&
+  curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
+  tar zxvf "${KREW}.tar.gz" &&
+  ./"${KREW}" install krew
+)
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+sudo kubectl krew install tree
+      
+# ./hack/ip.py
+# https://stackoverflow.com/questions/3655306/ubuntu-usr-bin-env-python-no-such-file-or-directory
+sudo apt-get install python3
+# whereis python3
+sudo ln -s /usr/bin/python3 /usr/bin/python
+# EDIT: hi everyone, I noticed that @mchid posted a better solution below my answer: sudo apt install python-is-python3
+   
