@@ -73,4 +73,9 @@ sudo apt-get install python3
 # whereis python3
 sudo ln -s /usr/bin/python3 /usr/bin/python
 # EDIT: hi everyone, I noticed that @mchid posted a better solution below my answer: sudo apt install python-is-python3
+
+#Install KNative Cli
+wget https://github.com/knative/client/releases/download/knative-v1.10.0/kn-linux-amd64
+mv kn-linux-amd64 kn
+sudo mv kn /usr/local/bin
    
