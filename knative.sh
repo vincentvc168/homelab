@@ -79,10 +79,7 @@ then
         # whereis python3
         sudo ln -s /usr/bin/python3 /usr/bin/python
         # EDIT: hi everyone, I noticed that @mchid posted a better solution below my answer: sudo apt install python-is-python3
-
-        exit
-    END
-    
+        END
 fi
 
 # Kind
