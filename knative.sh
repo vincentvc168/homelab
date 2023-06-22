@@ -84,3 +84,6 @@ wget https://github.com/knative-sandbox/kn-plugin-quickstart/releases/download/k
 mv kn-quickstart-linux-amd64 kn-quickstart
 chmod +x kn-quickstart
 sudo mv kn-quickstart /usr/local/bin
+
+#kn quickstart kind
+
